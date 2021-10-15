@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+*
+* Developer: Hemant Singh Magento Certified Developer
+* Category:  Wishusucess_CmsApi
+* Website:   http://www.wishusucess.com/
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Wishusucess\CmsApi\Api\PageManagerInterface"
+                type="Wishusucess\CmsApi\Model\PageManager" />
+    <preference for="Wishusucess\CmsApi\Api\BlockManagerInterface"
+                type="Wishusucess\CmsApi\Model\BlockManager" />
+    <preference for="Wishusucess\CmsApi\Api\Data\BlockInterface"
+                type="Wishusucess\CmsApi\Model\Block" />
+    <preference for="Wishusucess\CmsApi\Api\Data\PageInterface"
+                type="Wishusucess\CmsApi\Model\Page" />
+    <preference for="Wishusucess\CmsApi\Api\Data\PageSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <preference for="Wishusucess\CmsApi\Api\Data\BlockSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <type name="Wishusucess\CmsApi\Model\BlockManager">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Magento\Cms\Model\Api\SearchCriteria\BlockCollectionProcessor</argument>
+        </arguments>
+    </type>
+    <type name="Wishusucess\CmsApi\Model\PageManager">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Magento\Cms\Model\Api\SearchCriteria\PageCollectionProcessor</argument>
+        </arguments>
+    </type>
+</config>
